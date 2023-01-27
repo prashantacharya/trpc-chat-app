@@ -3,7 +3,8 @@ import { trpc } from '../utils/trpc';
 export default function ChatPage() {
   const { refetch: refetchChat, data, isLoading, error, } = trpc.chat.list.useQuery();
   const { mutateAsync, isLoading: isAddingChat } = trpc.chat.add.useMutation({
-    onSuccess: () => {
+    onSuccess: (data) => {
+      console.log(data)
       refetchChat()
     }
   });
