@@ -27,7 +27,7 @@ export default function ChatPage() {
 
   return (
     <div>
-      {data.map((c) => <p><span>{c.name}:</span> <span>{c.message}</span></p>)}
+      {data.map((c) => <p key={c.id}><span>{c.name}:</span> <span>{c.message}</span></p>)}
 
       <button onClick={addMessage}>Add new message</button>
     </div>
